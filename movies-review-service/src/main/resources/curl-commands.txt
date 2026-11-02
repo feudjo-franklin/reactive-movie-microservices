@@ -1,9 +1,6 @@
 POST-REVIEW:
 ------------
-curl -i \
--d '{"reviewId":1, "movieInfoId":1, "comment": "Excellent Movie", "rating":8.0}' \
--H "Content-Type: application/json" \
--X POST http://localhost:8081/v1/reviews
+curl.exe -i -d ('{"reviewId":1, "movieInfoId":1, "comment": "Excellent Movie", "rating":8.0}' -replace '\"', '\"') -H "Content-Type: application/json" -X POST http://localhost:8081/v1/reviews
 
 curl.exe -i -d ('{"reviewId":2, "movieInfoId":2, "comment": "Excellent Movie", "rating":8.0}' -replace '\"', '\"') -H "Content-Type: application/json" -X POST http://localhost:8081/v1/reviews
 
@@ -31,10 +28,7 @@ curl -i http://localhost:8081/v1/reviews/stream
 
 UPDATE-REVIEW:
 ----------------
-curl -i \
--d '{"reviewId":1, "movieInfoId":1, "comment": "Excellent Movie Update", "rating":8.5}' \
--H "Content-Type: application/json" \
--X PUT http://localhost:8081/v1/reviews/1
+curl.exe -i -d ('{"reviewId":1, "movieInfoId":1, "comment": "Excellent Movie Update", "rating":8.5}' -replace '\"', '\"') -H "Content-Type: application/json" -X PUT http://localhost:8081/v1/reviews/1
 
 
 DELETE-MOVIE-INFO

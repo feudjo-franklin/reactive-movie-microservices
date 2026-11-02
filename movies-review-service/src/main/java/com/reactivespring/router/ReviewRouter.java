@@ -18,7 +18,8 @@ public class ReviewRouter {
         return route()
                 .nest(path("/v1/reviews"), builder -> {
                     builder.POST("", request -> reviewHandler.addReview(request))
-                            .GET("", request -> reviewHandler.getReviews(request));
+                            .GET("", request -> reviewHandler.getReviews(request))
+                            .PUT("/{id}", request -> reviewHandler.updateReview(request));
                 })
                 .GET("/v1/helloworld", (request -> ServerResponse.ok().bodyValue("helloworld")))
 //                .POST("/v1/reviews", request -> reviewHandler.addReview(request))
