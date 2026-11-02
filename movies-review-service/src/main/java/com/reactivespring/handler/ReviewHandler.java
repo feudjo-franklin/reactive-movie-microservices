@@ -50,4 +50,15 @@ public class ReviewHandler {
                 );
 
     }
+
+    public Mono<ServerResponse> deleteReview(ServerRequest request) {
+
+        var reviewId = request.pathVariable("id");
+
+        var existingReview = reviewReactiveRepository.findById(reviewId);
+
+        return existingReview
+                .flatMap(review -> reviewReactiveRepository.deleteById(reviewId)
+                        .then(ServerResponse.noContent().build()));
+    }
 }
