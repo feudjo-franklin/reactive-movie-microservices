@@ -25,7 +25,7 @@ curl -i http://localhost:8081/v1/reviews/stream
 
 UPDATE-REVIEW:
 ----------------
-curl.exe -i -d ('{"reviewId":1, "movieInfoId":1, "comment": "Excellent Movie Update", "rating":8.5}' -replace '\"', '\"') -H "Content-Type: application/json" -X PUT http://localhost:8081/v1/reviews/1
+curl.exe -i -d ('{"reviewId":1, "movieInfoId":1, "comment": "Excellent Movie Update", "rating":8.5}' -replace '\"', '\"') -H "Content-Type: application/json" -X PUT http://localhost:8081/v1/reviews/100
 
 
 DELETE-MOVIE-INFO
